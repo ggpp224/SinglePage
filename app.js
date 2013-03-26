@@ -3,7 +3,8 @@
  */
  
  define(function(require,exports,app){
- 	var Ambow = require('ambow');
+ 	window.Ambow = require('ambow');
+ 	require('app/Router');
  	
  	//var Controller = Ambow.Controller;
  	
