@@ -9,12 +9,18 @@
  	var Ambow = requier('ambow');
  	
  	var MyRouter = Ambow.extend(Ambow.Router,{
- 		routes:{
- 			help:"help"
+ 		
+ 		initialize: function(opts){
+ 			this.route(/.+/,'initPage');
+ 			//this.on('route',this.initPage);
  		},
- 		help:function(a,b){
- 			alert(a);
+ 		
+ 		
+ 		initPage: function(id){
+ 			var id = Backbone.history.getHash();
+ 			alert(id);
  		}
+ 		
  	});
  	
  	Ambow.router = new MyRouter();

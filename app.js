@@ -8,6 +8,10 @@
  	
  	//var Controller = Ambow.Controller;
  	
+ 	$('#btn').click(function(e){
+ 		Ambow.router.navigate('test',{trigger:true});
+ 	});
+ 	
  	var MyController = Ambow.extend(Ambow.Controller,{
  		tagName:'div',
  		
