@@ -9,7 +9,11 @@
  	//var Controller = Ambow.Controller;
  	
  	$('#btn').click(function(e){
- 		Ambow.router.navigate('test',{trigger:true});
+ 		
+ 		Ambow.router.load('test/test2',{a:11111,b:"dddd"});
+ 		
+ 		Ambow.router.getParams();
+ 		//Ambow.router.getHashPath();
  	});
  	
  	var MyController = Ambow.extend(Ambow.Controller,{
