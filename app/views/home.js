@@ -7,15 +7,6 @@
  define(function(require,exports,module){
 
  	var Page1 = Ambow.extend(Ambow.View,{
- 		tagName:'div',
- 		
- 		className:'testName',
- 		
- 		initialize: function(){
- 			
- 		},
- 		
-
  		
  		render: function(){
  			this.$el.html('HOME首页');

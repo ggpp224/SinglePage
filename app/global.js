@@ -36,8 +36,8 @@ define(function(require,exports,module){
 	 				text:'页面演示',
 	 				nav:'default',
 	 				children:[
-	 					{"text":"guid","nav":"module1/Page1"},
-						{"text":"未封装查询列表页","nav":"module2/Page2"}
+	 					{"text":"Page1页面","nav":"module1/Page1"},
+						{"text":"Page2页面","nav":"module2/Page2"}
 	 				]
 	 			}
 	 		]
