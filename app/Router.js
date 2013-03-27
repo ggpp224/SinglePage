@@ -8,9 +8,9 @@
  * name:wang/age:1表是我们的hash参数 获取方法：Ambow.router.getParams()
  */
  
- define(function(requier,exports,module){
+ define(function(require,exports,module){
  	
- 	var Ambow = requier('ambow');
+ 	var Ambow = require('ambow');
  	
  	var MyRouter = Ambow.extend(Ambow.Router,{
  		
@@ -28,8 +28,20 @@
  		
  		
  		initPage: function(id){
- 			var id = Backbone.history.getHash();
- 			alert(id);
+ 			var hash = this.getHashObject(),path=hash.hashPath,pathLen=path.length;
+ 			path = path.substring(2,pathLen-1);
+ 			require.async('app/views/'+path,function(View){
+ 				var oldView = Ambow.viewStack.pop();
+ 				if(oldView){
+ 					//清除对上一个view上绑定的事件的监听和销毁上一个view对象
+ 					oldView.stopListening();
+ 					oldView=null;
+ 				}
+ 				var view = new View();
+ 				Ambow.viewStack.push(view);
+ 				view.render();
+ 				
+ 			});
  		},
  		
  		load: function(hash,params){

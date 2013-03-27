@@ -23,7 +23,9 @@
 				}
 			}
 			return o;
-		}
+		},
+		
+		viewStack : []
  	};
  	
  	module.exports = Ambow;
@@ -44,7 +46,7 @@
  	/**
  	 * 封装backbone的View，以便在项目中做统一控制
  	 */
- 	Ambow.Controller = Ambow.extend(Backbone.View,{
+ 	Ambow.View = Ambow.extend(Backbone.View,{
  		
  	});
  	
