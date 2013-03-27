@@ -39,7 +39,22 @@
  		},
  		
  		//指向业务主要操作的中间内容区域JQuery对象
- 		el: $('#content-center')
+ 		el: $('#content-view'),
+ 		
+ 		applyIf : function(o, c) {
+			if (o) {
+				for (var p in c) {
+					if (!Ambow.isDefined(o[p])) {
+						o[p] = c[p];
+					}
+				}
+			}
+			return o;
+		},
+		
+		isDefined : function(v) {
+			return typeof v !== 'undefined';
+		}
  		
  	});
  	
@@ -48,6 +63,23 @@
  	 */
  	Ambow.View = Ambow.extend(Backbone.View,{
  		
+ 		//设置面包屑
+ 		setCurmbs: function(chain){
+ 			var crumbStr = '';
+	 		if(_.isString(chain)){
+	 			crumbStr=chain;
+	 		}else{
+	 			var arr=[];
+		 		for(var i=0,len=chain.length;i<len;i++){
+		 			var rec=chain[i];
+		 			arr.push('<a href="#!/'+rec.nav+'/">'+rec.text+'</a>');
+		 		}
+		 		crumbStr=arr.join('>>');
+	 		}
+	 		
+			$('#breadcrumb').html(crumbStr);
+	 	}
+	 	
  	});
  	
  	/**

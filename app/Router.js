@@ -28,8 +28,7 @@
  		
  		
  		initPage: function(id){
- 			var hash = this.getHashObject(),path=hash.hashPath,pathLen=path.length;
- 			path = path.substring(2,pathLen-1);
+ 			var hash = this.getHashObject(),path=hash.hashPath;
  			require.async('app/views/'+path,function(View){
  				var oldView = Ambow.viewStack.pop();
  				if(oldView){
@@ -40,6 +39,8 @@
  				var view = new View();
  				Ambow.viewStack.push(view);
  				view.render();
+ 				//path.substr(path.lastIndexOf('/')+1)
+ 				view.setCurmbs(App.G_NavData[path]);
  				
  			});
  		},
@@ -67,7 +68,7 @@
  			if(len>0){
  				path = params[0],pathLen=path.length;
  				var params = hash.substr(pathLen).split('/'),paramLen=params.length;
- 				
+ 				path = path.substring(2,pathLen-1);
  				var o = {};
  				for(var i=0;i<paramLen;i++){
  					var s = params[i];
@@ -96,7 +97,9 @@
  			var path = hash.match(this.hashPathReg);
  			
  			if(path.length>0){
- 				return path[0];
+ 				path = path[0],pathLen=path.length;
+ 				path = path.substring(2,pathLen-1)
+ 				return path;
  			}
  			
  			return '';

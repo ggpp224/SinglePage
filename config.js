@@ -25,6 +25,7 @@
     	exports:'Backbone',
     	deps:['underscore']
     },
-    'ambow':'sdk/src/Ambow.js'
+    'ambow':'sdk/src/Ambow.js',
+    'global':'app/global.js'
   }
 });
