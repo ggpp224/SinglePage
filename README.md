@@ -11,7 +11,7 @@ SinglePage
     |-- app.js					<span class="note">应用入口文件</span>
     |-- config.js				<span class="note">js文件路径配置</span>  
       
-    `-- app					<span class="note">应用代码</span>
+    `-- app					        <span class="note">应用代码</span>
           | -- global.js			<span class="note">全局变量</span>
           | -- Router.js			<span class="note">view切换的路由控制</span>
           | -- crumb.js				<span class="note">面包屑配置</span>
@@ -22,7 +22,7 @@ SinglePage
           ` -- util				<span class="note">工具类</span>                              
     `-- sdk					<span class="note">函数/类库</span>
           | -- jquery.js,sea.js ...		
-          ` -- src				<span class="note">框架源代码</span>
+          ` -- src				        <span class="note">框架源代码</span>
                  | -- Ambow.js			<span class="note">框架源代码</span>
     `-- resources				<span class="note">资源文件夹</span>
           ` -- css				<span class="note">存放css</span>
