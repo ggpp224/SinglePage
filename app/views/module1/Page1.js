@@ -21,7 +21,7 @@
  		
  		render: function(){
  			this.$el.html(_.template(tpls.init_tpl,{name:"page1",btnName:"跳转到page2"}));
- 			Ambow.el.html(this.el);
+ 			App.el.html(this.el);
  			return this;
  		},
  		

@@ -10,7 +10,7 @@
 
  		render: function(){
  			this.$el.html('页面演示');
- 			Ambow.el.html(this.el);
+ 			App.el.html(this.el);
  			return this;
  		}
  	});

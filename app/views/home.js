@@ -9,9 +9,17 @@
  	var Page1 = Ambow.extend(Ambow.View,{
  		
  		render: function(){
- 			this.$el.html('HOME首页');
- 			Ambow.el.html(this.el);
- 			return this;
+ 			var me = this;
+ 			Ambow.get(App.HOST+'app/tpls/htm/organize.html',function(rs){
+ 				me.$el.html(rs);
+ 				App.el.html(me.el);
+ 			});
+ 			
+ 			
+ 			
+ 			
+ 			
+
  		}
  	});
  	

@@ -38,8 +38,7 @@
  			return Backbone.Model.extend.call(obj,protoProps, staticProps);
  		},
  		
- 		//指向业务主要操作的中间内容区域JQuery对象
- 		el: $('#content-view'),
+ 		
  		
  		applyIf : function(o, c) {
 			if (o) {
@@ -105,5 +104,69 @@
  	});
  	
  	
+ 	
+ 	//ajax拦截
+	Ambow.Asyn = function(opt){
+		if(opt.isGet){
+			var params = opt.arg;
+			$.get(params[0],params[1],params[2],params[3]);	
+			return;
+		}else if(opt.isGetJson){
+			var params = opt.arg;
+			$.getJSON(params[0],params[1],params[2],params[3]);	
+			return;
+		}
+		$.ajax(opt);
+	}
+
+	/**
+	 * post请求
+	 * @param {} opt object 包含
+	 * url, String
+	 * params ,Object 参数对象
+	 * 
+	 * 
+	 */
+	Ambow.post = function(opt){
+		Ambow.Asyn({
+				type:'post',
+				data: Ambow.encode(opt.params),
+				dataType:"json",
+				url:opt.url,
+				contentType:'application/json;charset=UTF-8',
+				success:opt.success||function(){},
+				error:opt.error||function(){}
+		})
+	};
+	
+	/**
+	 * ajax请求
+	 * @param {} opt
+	 */
+	Ambow.ajax = function(opt){
+		Ambow.Asyn(opt);
+	}
+	
+	/**
+	 * get请求
+	 */
+	Ambow.get = function(){
+		var opt ={
+			isGet:true,
+			arg:arguments
+		};
+		Ambow.Asyn(opt);
+	},
+	
+	/**
+	 * get请求，返回json
+	 */
+	Ambow.getJSON = function(){
+		var opt ={
+			isGetJson:true,
+			arg:arguments
+		};
+		Ambow.Asyn(opt);
+	}
  	
  });

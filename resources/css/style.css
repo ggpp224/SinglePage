@@ -46,12 +46,12 @@ h6					{ font-size:12px;}
 
 
 
-/* Modify by guopeng  屏蔽左侧 */
+/* Modify */
 
 	.page_left,
-	.page_right			{ float:left;}
-	.page_left			{ width:180px; border-radius:4px 0 0 4px;}
-	.page_right			{ width:800px; height:100%; background:#fff; border-radius:0 4px 4px 0;margin:0 auto;}
+	.page_right			{ float:left; background:#fff;height:500px;}
+	.page_left			{ width:174px; border-radius:4px 0 0 4px;border-right:1px solid #DDD;padding:2px 1px 1px 1px;}
+	.page_right			{ width:800px; border-radius:0 4px 4px 0;margin:0 auto;padding:1px 0 0 2px}
 
 
 /* TOP Header */
@@ -64,98 +64,29 @@ h6					{ font-size:12px;}
 .logo				{ float:left; margin-top:25px; width:217px; height:50px; text-indent:-99999px; background:url(../images/logo.png) no-repeat;}
 
 
-/* Navigation */
-.navigation			{ float:right; margin-top:30px; border-radius:4px; background:url(../images/nav_bg.jpg) repeat-x;}
-.navigation li		{ float:left; }
-.navigation li a	{ display:block; height:40px; line-height:40px; padding:0 14px; font-size:14px; color:#fff; }
-.navigation li a:hover,
-.navigation li a.current{ background:url(../images/nav_bg.jpg) 0 -40px repeat-x;}
+/* leftNav */
+.page_left li a {
+    border-bottom: 2px solid #DADADA;
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+    border-right: 1px solid rgba(0, 0, 0, 0.04);
+    color: #777777;
+    display: block;
+    font-size: 12px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+    
+    background-color: #EBEBEB;
+    background-image: linear-gradient(#FCFCFC, #EBEBEB);
+    background-repeat: repeat-x;
+    color: #000000;
+    margin-bottom: 2px;
+}
 
-
-/* SideBar */
-.sidebar			{ width:150px; margin:15px auto;}
-.line				{ display:block; margin:4px 0; height:2px; overflow:hidden; background:url(../images/line.jpg) repeat-x;}
-
-
-/* 头像区域 */
-.photo				{ }
-.photo i			{ display:block; float:left; width:60px; height:60px; overflow:hidden;}
-.photo i img		{ width:60px; height:60px;}
-.photo .photo_r		{ }
-.photo .photo_r p	{ text-align:center; line-height:20px; margin:0;}
-.photo .photo_r p a	{ color:#111;}
-
-
-/* 粉丝统计 */
-.state				{ padding:12px 0;}
-.state ul			{}
-.state ul li		{ float:left; border-right:1px solid #ddd; padding:0 8px;}
-.state ul li p		{ margin:0; padding:0; text-align:center;}
-.state .noborder	{ border:0;}
-
-
-/* 侧导航Nav */
-.sidebar_icon		{}
-.sidebar_icon li	{ position:relative; clear:both; }
-.sidebar_icon li a	{ display:block; height:24px; line-height:24px; font-size:14px; padding:8px 0; color:#333; text-indent:10px; }
-.sidebar_icon li a.selected	 { display:block; height:24px; line-height:24px; font-size:14px; padding:8px 0 8px 10px; color:#333; text-indent:10px; background:url(../images/sidebar_select.png) no-repeat; position:relative; left:-10px; top:0; width:168px; }
-
-.sidebar_icon li a.selected .nav_ico1,
-.sidebar_icon li a.selected .nav_ico2,
-.sidebar_icon li a.selected .nav_ico3,
-.sidebar_icon li a.selected .nav_ico4{ display:block; float:left; width:24px; height:24px; margin:0; padding:0; background:url(../images/sidebar_icon.png) no-repeat;}
-.sidebar_icon li a.selected .nav_ico1{ background-position:-25px -8px;}
-.sidebar_icon li a.selected .nav_ico2{ background-position:-25px -48px;}
-.sidebar_icon li a.selected .nav_ico3{ background-position:-25px -88px;}
-.sidebar_icon li a.selected .nav_ico4{ background-position:-25px -128px;}
-
-.nav_ico1,
-.nav_ico2,
-.nav_ico3,
-.nav_ico4{ display:block; float:left; width:24px; height:24px; margin:0; padding:0; background:url(../images/sidebar_icon.png) no-repeat;}
-.nav_ico1{ background-position:0 -8px;}
-.nav_ico2{ background-position:0 -48px;}
-.nav_ico3{ background-position:0 -88px;}
-.nav_ico4{ background-position:0 -128px;}
-
-
-/* 我的应用Nav */
-.myapp{}
-.myapp h1			{ font-weight:bold; font-size:12px; line-height:32px; color:#333;}
-.myapp li			{ padding:8px 0;}
-.myapp li a			{ color:#111;}
-.myapp li span		{ float:right;}
-.myapp li span a	{ color:#999;}
-/* 应用图标 */
-.myapp_icon_01,
-.myapp_icon_02,
-.myapp_icon_03,
-.myapp_icon_04,
-.myapp_icon_05,
-.myapp_icon_06,
-.myapp_icon_07,
-.myapp_icon_08,
-.myapp_icon_09,
-.myapp_icon_10,
-.myapp_icon_11,
-.myapp_icon_12{ display:block; float:left; margin:2px 4px 0 0; width:16px; height:16px; background:url(../images/myapp_icon.gif) no-repeat;}
-
-.myapp_icon_01{ background-position:0 -17px;}
-.myapp_icon_02{ background-position:0 -50px;}
-.myapp_icon_03{ background-position:0 -81px;}
-.myapp_icon_04{ background-position:0 -113px;}
-.myapp_icon_05{ background-position:0 -146px;}
-.myapp_icon_06{ background-position:0 -177px;}
-.myapp_icon_07{ background-position:0 -210px;}
-.myapp_icon_08{ background-position:0 -240px;}
-.myapp_icon_09{ background-position:0 -275px;}
-.myapp_icon_10{ background-position:0 -304px;}
-.myapp_icon_11{ background-position:0 -337px;}
-.myapp_icon_12{ background-position:0 -372px;}
-
-
-
-
+.page_left li a:hover {
+    border-bottom: 2px solid #D26911;
+}
 
 
 

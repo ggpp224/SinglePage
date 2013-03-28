@@ -26,6 +26,7 @@
     	deps:['underscore']
     },
     'ambow':'sdk/src/Ambow.js',
-    'global':'app/global.js'
+    'global':'app/global.js',
+    'crumb':'app/crumb.js'
   }
 });
