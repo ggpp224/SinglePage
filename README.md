@@ -3,11 +3,6 @@ SinglePage
 
 利用backbone.js,underscore,seajs构造单页面框架
 
-<style type="text/css">
-  .note{
-		font-size:13px;
-	}
-</style>
 <h4>组织目录</h4>
 <pre>
 
