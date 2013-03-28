@@ -20,13 +20,13 @@ SinglePage
           ` -- stores				<span class="note">存放collection</span> 
           ` -- tpls				<span class="note">存放模板文件</span>            
           ` -- util				<span class="note">工具类</span>                              
-    `-- sdk					<span class="note">函数/类库</span>
+    `-- sdk					    <span class="note">函数/类库</span>
           | -- jquery.js,sea.js ...		
           ` -- src				        <span class="note">框架源代码</span>
                  | -- Ambow.js			<span class="note">框架源代码</span>
     `-- resources				<span class="note">资源文件夹</span>
           ` -- css				<span class="note">存放css</span>
-          ` -- images				<span class="note">存入图片</span>
+          ` -- images		    <span class="note">存入图片</span>
          		          
 
          
