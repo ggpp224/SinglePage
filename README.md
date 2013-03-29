@@ -3,6 +3,11 @@ SinglePage
 
 利用backbone.js,underscore,seajs构造单页面框架
 
+jquery,underscore 提供工具函数库 <br />
+seajs提供模块化开发，模块的同步和异步加载<br />
+backbone 提供了view,model,collection,event,router(history)基本组件功能和类继承的支持<br />
+通过上面的函数/类库的基础支持，利用MVC和模块化开发的思想构建适合自己web App项目开发的架构。<br />
+
 <h4>组织目录</h4>
 <pre>
 
