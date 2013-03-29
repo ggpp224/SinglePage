@@ -15,6 +15,14 @@ backbone 提供了view,model,collection,event,router(history)基本组件功能�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所谓架构就是提供代码组织方式，制定项目开发约定，提供通用功能的统一控制，提高可维护性，让前端开发者主要关注各个模块（view）的业务开发，
 提高开发效率。
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们对backbaone的View,collection,model作了针对项目作了进一层的封装，其实也就是多作了一层继承，对应的类分别是Ambow.View,
+Ambow.Store,Ambow.model.继承可以写作Ambow.extend，例如继承view： Ambow.extend(Ambow.View,{ .... }); ,继承collection: Ambow.extend(Ambow.Store,{ ... }),其它的都是类似的写法。为什么要多作一层
+继承？ 这是为了对项目的统一控制，你的写法不再是继承Backbone，而是继承Ambow.View/Store/Model ,这样我可以在基类中添加一些我的统一控制，比如：每个view的面包屑，会随每个view的切换而改变，我只在基类中
+实现其改变功能，这样你在写每个view的控制时就不需关注这些，框架给你做了，针不项目不同特点，我们可以在model或store基类中添加一些经常用的方法和事件..., 另一个控制view统一切换的就是Router类，我们在项目
+起始文件app.js实现了单例实例化：Ambow.router ,这里要约定的就是你要把你每个view的控制文件，即view类(其实这个view的大部分功能是controller，其实我是很愿意把这个类命名为Ambow.Controller,但为了个backbone的统一还是叫view吧)
+放在views目录下。 比如views目录下有Page1.js，和Page2.js两个view类，要从Page1切换到Page2你只需要调用Ambow.router.load('Page2/'),框架会自动切换到Page2.没有一成不变的框架，我们需要针对不同的项目特点对框架作
+不同的调整，但大体思想是一致的。
+
 <h4>组织目录</h4>
 <pre>
 
