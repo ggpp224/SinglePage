@@ -12,6 +12,9 @@ backbone 提供了view,model,collection,event,router(history)基本组件功能�
 如果view切换没有整体设计好，将切换代码分散在统一控制文件和各个view控制文件中将对开发后期和上线后维护造成极大的困难。不存在需求不变的项目，
 所以你的架构从一开始就要想到应对变化，各个view功能的增删改不会对其它模块和整体造成冲击。这就是backbone的分层和seajs的模块化的意义所在。
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所谓架构就是提供代码组织方式，制定项目开发约定，提供通用功能的统一控制，提高可维护性，让前端开发者主要关注各个模块（view）的业务开发，
+提高开发效率。
+
 <h4>组织目录</h4>
 <pre>
 
