@@ -24,6 +24,17 @@ Ambow.Store,Ambow.model.继承可以写作Ambow.extend，例如继承view： Amb
 放在views目录下。 比如views目录下有Page1.js，和Page2.js两个view类，要从Page1切换到Page2你只需要调用Ambow.router.load('Page2/'),框架会自动切换到Page2.没有一成不变的框架，我们需要针对不同的项目特点对框架作
 不同的调整，但大体思想是一致的。
 
+针对hash我们作了进一步的约定：
+例如:http://test/SinglePage/#!/module2/Page2/name:guopeng/sex:1
+hash是以#符号开头的，也就是：!/module2/Page2/name:guopeng/sex:1
+ * 以!/开头，表示我们要监控以!/开头的hash
+ * module2/Page2/表示我的hash路径 获取方法:Ambow.router.getHashPath(),也是view切换时传入的字符串
+ * name:guopeng/sex:1表是我们的hash参数 获取方法：Ambow.router.getParams()。 返回 {name:"guopeng",sex:"1"}
+view切换可以这样写：Ambow.router.load('module2/Page2') 这是不带参数的，带参数的：Ambow.router.load('module2/Page2/name:guopeng/sex:1'),在Page2的view里调用
+Ambow.router.getParams()获取参数。
+  
+ 
+
 <h4>组织目录</h4>
 <pre>
 
