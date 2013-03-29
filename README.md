@@ -1,7 +1,8 @@
 SinglePage
 ==========
 
-利用backbone.js,underscore,seajs构造单页面框架
+利用backbone.js,underscore,seajs构造单页面框架，针对以前的单页面框架，利用backbone和seajs作了重构。有兴趣的可以查阅easyui项目，
+不要被它的名字误导，只是在ui库用了easyui,框架完全可以脱离easyui,比如另一个项目WebMobile，用的同一套框架，而ui库换成了jquery mobile.
 
 jquery,underscore 提供工具函数库 <br />
 seajs提供模块化开发，模块的同步和异步加载<br />
