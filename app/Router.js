@@ -20,7 +20,20 @@
  		
  		initialize: function(opts){
  			this.route(this.initReg,'initPage');
+ 			this.on({
+ 				"loadStart" : this.onLoadStart,
+ 				"loadComplete" : this.onLoadComplete
+ 			});
  		},
+ 		
+ 		onLoadStart:function(){
+ 			$('#js-frame-loading-template').show();
+ 		},
+ 		
+ 		onLoadComplete: function(){
+ 			$('#js-frame-loading-template').hide();
+ 		},
+ 		
  		
  		/*routes:{
  			'*actions':'initPage'
@@ -28,6 +41,10 @@
  		
  		
  		initPage: function(id){
+ 			//var loading =  $('#js-frame-loading-template');
+ 			//loading.show();
+ 			this.trigger('loadStart');
+ 			var me = this;
  			var hash = this.getHashObject(),path=hash.hashPath;
  			require.async('app/views/'+path,function(View){
  				var oldView = Ambow.viewStack.pop();
@@ -41,7 +58,7 @@
  				view.render();
  				//path.substr(path.lastIndexOf('/')+1)
  				view.setCurmbs(App.G_NavData[path]);
- 				
+ 				me.trigger('loadComplete');
  			});
  		},
  		
