@@ -41,7 +41,7 @@
 	 }
 	 
 	 _getNavData(_navData,[]);
-	 _navData=null;
+	 delete _navData;
 	 
 	 return G_NavData;
  	

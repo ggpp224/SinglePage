@@ -8,7 +8,7 @@
 /*  						 Global全局 			    	   	   */
 /* ----------------------------------------------------------- */
 
-body				{ background:#f0f0f0 url(../images/bodybg.jpg)  repeat-x;}
+body				{}
 
 h1,h2,h3,h4,h5,h6	{ font-family:"Microsoft YaHei", "黑体";}
 h1					{ font-size:30px;}
@@ -37,8 +37,9 @@ h6					{ font-size:12px;}
 
 
 
-.page_tophead		{ min-width:980px; height:27px; border-bottom:1px solid #dee2e5; background:#f5f5f5;}
-.page_head			{ min-width:980px; height:90px;}
+.page_head			{ min-width:980px; height:40px;border-bottom: 1px solid #E5E5E5; text-shadow: 0 1px 0 #FFFFFF;background-color: #F3F3F3;
+   						 background-image: linear-gradient(#F9F9F9, #F3F3F3);
+   						 background-repeat: repeat-x;}
 .page_content		{ width:980px; margin:0 auto; background:#f7f7f7; box-shadow:0 0 5px #ddd;}
 
 .page_footer		{ width:980px; margin:20px auto; color:#777; text-align:center;}
@@ -50,18 +51,8 @@ h6					{ font-size:12px;}
 
 	.page_left,
 	.page_right			{ float:left; background:#fff;height:500px;}
-	.page_left			{ width:174px; border-radius:4px 0 0 4px;border-right:1px solid #DDD;padding:2px 1px 1px 1px;}
+	.page_left			{ width:174px; border: 1px solid #D2D9DD; border-radius: 4px 4px 4px 4px;padding:2px 1px 1px 1px;}
 	.page_right			{ width:800px; border-radius:0 4px 4px 0;margin:0 auto;padding:1px 0 0 2px}
-
-
-/* TOP Header */
-.top_gohome	a		{ color:#111; line-height:26px; }
-.top_information	{ float:right; color:#999;}
-.top_information a	{ color:#111; line-height:26px; }
-
-
-/* LOGO */
-.logo				{ float:left; margin-top:25px; width:217px; height:50px; text-indent:-99999px; background:url(../images/logo.png) no-repeat;}
 
 
 /* leftNav */
@@ -89,7 +80,32 @@ h6					{ font-size:12px;}
 }
 
 
+#breadcrumb {
+	color: #999999;
+    font-size: 18px;
+    margin: 5px 0 0 5px;
+}
 
+#breadcrumb strong.final-path {
+    color: #000000;
+}
+
+a {
+	color:#4183C4;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#content-view {
+    border: 1px solid #D2D9DD;
+    border-radius: 4px 4px 4px 4px;
+    color: #7B878C;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 9px 8px 9px;
+}
 
 
 /* ----------------------------------------------------------- */

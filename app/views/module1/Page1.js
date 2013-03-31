@@ -5,6 +5,7 @@
  */
  
  define(function(require,exports,module){
+ 	var ddd = require('jquery');
  	var tpls = require('app/tpls/Page1.js');
  	var Page1 = Ambow.extend(Ambow.View,{
  		tagName:'div',

@@ -3,6 +3,8 @@
  */
  
  define(function(require,exports,module){
+ 	
+ 	
  	window.Ambow = require('ambow');
  	
  	//将全局变量赋给App

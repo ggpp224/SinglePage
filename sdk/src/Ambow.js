@@ -68,12 +68,18 @@
 	 		if(_.isString(chain)){
 	 			crumbStr=chain;
 	 		}else{
-	 			var arr=[];
-		 		for(var i=0,len=chain.length;i<len;i++){
+	 			var arr=[],len=chain.length,lensub=len-1;
+		 		for(var i=0;i<len;i++){
 		 			var rec=chain[i];
-		 			arr.push('<a href="#!/'+rec.nav+'/">'+rec.text+'</a>');
+		 			if(i>0&&i<lensub){
+		 				arr.push('<a href="#!/'+rec.nav+'/">'+rec.text+'</a>');
+		 			}else if(i==0){
+		 				arr.push('<a class="bold" href="#!/'+rec.nav+'/">'+rec.text+'</a>');		 				
+		 			}else{
+		 				arr.push('<strong class="final-path">'+rec.text+'</strong>');		 						 				
+		 			}
 		 		}
-		 		crumbStr=arr.join('>>');
+		 		crumbStr=arr.join('<span class="separator"> / </span>');
 	 		}
 	 		
 			$('#breadcrumb').html(crumbStr);
