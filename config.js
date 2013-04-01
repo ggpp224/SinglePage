@@ -27,6 +27,7 @@
     },
     'ambow':'sdk/src/Ambow.js',
     'global':'app/global.js',
-    'crumb':'app/crumb.js'
+    'crumb':'app/crumb.js',
+    'list': 'sdk/src/ListView' 
   }
 });

@@ -84,6 +84,7 @@ h6					{ font-size:12px;}
 	color: #999999;
     font-size: 18px;
     margin: 5px 0 0 5px;
+    min-height:21px;
 }
 
 #breadcrumb strong.final-path {
@@ -212,16 +213,9 @@ a {
 .btn_save:active 	{ color:#fff; background:#0096e2;}
 
 
-
-
-
-
-
-
-
-
-
-/* ----------------------------------------------------------- */
-/*  						 CONTENT 正文区 			    	   */
-/* ----------------------------------------------------------- */
-.center_header		{ margin-bottom:14px; padding:12px 24px; border-radius:4px; color:#fff; background:#86bfdc; }
+ /* 分页 */
+ .pagination li {
+    float: left;
+    list-style-type: none;
+    padding: 0 10px;
+}

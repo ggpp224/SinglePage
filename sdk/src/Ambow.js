@@ -39,7 +39,77 @@
 				}
 			}
 			return o;
-		}
+		},
+		
+		isEmpty : function(v, allowBlank){
+            return v === null || v === undefined || (!allowBlank ? v === '' : false);
+        },
+		
+		urlAppend : function(url, s){
+            if(!Ambow.isEmpty(s)){
+                return url + (url.indexOf('?') === -1 ? '?' : '&') + s;
+            }
+            return url;
+        },
+
+		
+		/**
+		 * 
+		 */
+		 urlDecode : function(string, overwrite){
+            if(Ambow.isEmpty(string)){
+                return {};
+            }
+            var obj = {},
+                pairs = string.split('&'),
+                d = decodeURIComponent,
+                name,
+                value;
+                
+            for(var i=0,len=pairs.length;i<len;i++){
+            	var pair = pairs[i];
+            	pair = pair.split('=');
+                name = d(pair[0]);
+                value = d(pair[1]);
+                obj[name] = overwrite || !obj[name] ? value :
+                            [].concat(obj[name]).concat(value);
+            }
+            
+            return obj;
+        },
+        
+        urlEncode : function(o, pre){
+            var empty,
+                buf = [],
+                e = encodeURIComponent;
+
+          /*  Ambow.iterate(o, function(key, item){
+                empty = Ambow.isEmpty(item);
+                Ambow.each(empty ? key : item, function(val){
+                    buf.push('&', e(key), '=', (!Ambow.isEmpty(val) && (val != key || !empty)) ? (_.isDate(val) ? Ambow.encode(val).replace(/"/g, '') : e(val)) : '');
+                });
+            });
+            */
+            
+            for(key in o){
+            	var item = o[key];
+            	empty = Ambow.isEmpty(item);
+            	_.each(empty ? key : item, function(val){
+                    buf.push('&', e(key), '=', (!Ambow.isEmpty(val) && (val != key || !empty)) ? (_.isDate(val) ? Ambow.encode(val).replace(/"/g, '') : e(val)) : '');
+                });
+            }
+            
+            if(!pre){
+                buf.shift();
+                pre = '';
+            }
+            return pre + buf.join('');
+        },
+        
+        getCookie : function (O){var o="",l=O+"=";if(document.cookie.length>0){var i=document.cookie.indexOf(l);if(i!=-1){i+=l.length;var I=document.cookie.indexOf(";",i);if(I==-1)I=document.cookie.length;o=unescape(document.cookie.substring(i,I))}};return o},
+		
+        // 植入cookie n->cookieq名,v->cookie值,t->时间(毫秒),p->路径,c->域名
+		setCookie : function (n,v,t,p,c){var T="";if(t){T=new Date((new Date).getTime()+t);T="; expires="+T.toGMTString()};document.cookie=n+"="+escape(v)+T+(p?';path='+p:'/')+(c?';domain='+c:'')}
  		
  	});
  	
@@ -48,9 +118,16 @@
  	 */
  	Ambow.View = Ambow.extend(Backbone.View,{
  		
+ 		render: function(){return this;},
+ 		
  		//设置面包屑
  		setCurmbs: function(chain){
  			var crumbStr = '';
+ 			if(!chain){
+ 				$('#breadcrumb').html(crumbStr);
+ 				return;
+ 			}
+ 			
 	 		if(_.isString(chain)){
 	 			crumbStr=chain;
 	 		}else{
@@ -84,7 +161,7 @@
  	/**
  	 * 封装backbone的collection(唉，深受ext思想毒害，觉得store能表达意思的同时还能少写几个字母)，以便在项目中做统一控制
  	 */
- 	Ambow.Store = Ambow.extend(Backbone.Model,{
+ 	Ambow.Store = Ambow.extend(Backbone.Collection,{
  		
  	});
  	
@@ -93,6 +170,45 @@
  	 */
  	Ambow.Router = Ambow.extend(Backbone.Router,{
  		
+ 	});
+ 	
+ 	Ambow.apply(Date.prototype,{
+ 		format:function(format){
+				var o = {
+					"M+" : this.getMonth()+1, //month
+					"d+" : this.getDate(), //day
+					"h+" : this.getHours(), //hour
+					"m+" : this.getMinutes(), //minute
+					"s+" : this.getSeconds(), //second
+					"q+" : Math.floor((this.getMonth()+3)/3), //quarter
+					"S" : this.getMilliseconds() //millisecond
+				} ;
+		
+				if(/(y+)/.test(format)) {
+					format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+				}
+		
+				for(var k in o) {
+					if(new RegExp("("+ k +")").test(format)) {
+						format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+					}
+				}
+				return format;
+		}
+ 	});
+ 	
+ 	Ambow.apply(jQuery.Event.prototype,{
+ 		getTarget : function(selector){
+			var target = $(this.target);
+			if(target.filter(selector).length>0){
+				return target;
+			}
+			var parent = target.parents(selector);
+			if(parent.length>0){
+				return parent;
+			}
+			return null;
+		}
  	});
  	
 	Ambow.JSON = new (function(){
