@@ -41,8 +41,6 @@
  		
  		
  		initPage: function(id){
- 			//var loading =  $('#js-frame-loading-template');
- 			//loading.show();
  			this.trigger('loadStart');
  			var me = this;
  			var hash = this.getHashObject(),path=hash.hashPath;

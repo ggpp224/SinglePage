@@ -8,7 +8,7 @@
  	var tpls = {
  		init_tpl:[
  			'<div><%= name %></div>',
- 			'<input type="button" class="btn btn_gray" id="btn" value="<%= btnName %>">'
+ 			'<p><input type="button" class="btn btn_gray" id="btn" value="<%= btnName %>"></p>'
  		].join('')
  	}
  	

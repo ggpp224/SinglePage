@@ -50,7 +50,7 @@ h6					{ font-size:12px;}
 /* Modify */
 
 	.page_left,
-	.page_right			{ float:left; background:#fff;}
+	.page_right			{ float:left; background:#fff;position:relative;}
 	.page_left			{ width:174px;min-height: 552px; border: 1px solid #D2D9DD; border-radius: 4px 4px 4px 4px;padding:2px 1px 1px 1px;}
 	.page_right			{ width:800px; border-radius:0 4px 4px 0;margin:0 auto;padding:1px 0 0 2px}
 
@@ -108,7 +108,12 @@ a {
     min-height: 500px;
 }
 
-
+#js-frame-loading-template{
+	display: none;
+	position:absolute; 
+	top:200px; 
+	left:327px;
+}
 /* ----------------------------------------------------------- */
 /*  						 Table 表格 				    	   */
 /* ----------------------------------------------------------- */
