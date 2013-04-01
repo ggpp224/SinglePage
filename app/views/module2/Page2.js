@@ -5,7 +5,7 @@
  */
  
  define(function(require,exports,module){
- 	var tpls = require('app/tpls/Page1.js');
+ 	var tpls = require('app/tpls/Page2.js');
  	var Page = Ambow.extend(Ambow.View,{
  		tagName:'div',
  		
@@ -16,7 +16,8 @@
  		},
  		
  		events : {
- 			'click #btn':'onJumpBtnClicked'
+ 			'click #btn':'onJumpBtnClicked',
+ 			'click #paramsBtn': 'onParamsBtnClicked'
  		},
  		
  		render: function(){
@@ -27,6 +28,10 @@
  		
  		onJumpBtnClicked:function(e){
  			Ambow.router.load('module1/Page1/');
+ 		},
+ 		
+ 		onParamsBtnClicked: function(e){
+ 			alert(Ambow.encode(Ambow.router.getParams()));
  		}
  	});
  	
