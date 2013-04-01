@@ -33,7 +33,7 @@ hash是以#符号开头的，也就是：!/module2/Page2/name:guopeng/sex:1
 view切换可以这样写：Ambow.router.load('module2/Page2') 这是不带参数的，带参数的：Ambow.router.load('module2/Page2/name:guopeng/sex:1'),在Page2的view里调用
 Ambow.router.getParams()获取参数。
   
- 
+(含动态数据，请在Apache或tomcat等中间件容器下运行) 
 
 <h4>组织目录</h4>
 <pre>
