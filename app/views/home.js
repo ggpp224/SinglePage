@@ -9,18 +9,11 @@
  	var Page1 = Ambow.extend(Ambow.View,{
  		
  		render: function(){
- 			var me = this;
- 			Ambow.get(App.HOST+'app/tpls/htm/organize.html',function(rs){
- 				me.$el.html(rs);
- 				App.el.html(me.el);
- 			});
- 			
- 			
- 			
- 			
- 			
-
+ 			var tpl = require('app/tpls/htm/organize.html');
+ 			this.$el.html(tpl);
+ 			App.el.html(this.el);
  		}
+ 		
  	});
  	
  	return Page1;

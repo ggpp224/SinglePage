@@ -7,7 +7,7 @@
   base: './',
   
   // 加载 shim 插件
-  plugins: ['shim'],
+  plugins: ['shim','text'],
 
   // 配置 shim 信息，这样我们就可以通过 require('jquery') 来获取 jQuery
   alias: {
