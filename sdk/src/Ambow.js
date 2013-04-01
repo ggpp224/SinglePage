@@ -83,22 +83,20 @@
                 buf = [],
                 e = encodeURIComponent;
 
-          /*  Ambow.iterate(o, function(key, item){
+           /* _.each(o, function(key, item){
                 empty = Ambow.isEmpty(item);
-                Ambow.each(empty ? key : item, function(val){
+                _.each(empty ? key : item, function(val){
                     buf.push('&', e(key), '=', (!Ambow.isEmpty(val) && (val != key || !empty)) ? (_.isDate(val) ? Ambow.encode(val).replace(/"/g, '') : e(val)) : '');
                 });
-            });
-            */
+            });*/
             
-            for(key in o){
+            for(var key in o){
             	var item = o[key];
             	empty = Ambow.isEmpty(item);
-            	_.each(empty ? key : item, function(val){
-                    buf.push('&', e(key), '=', (!Ambow.isEmpty(val) && (val != key || !empty)) ? (_.isDate(val) ? Ambow.encode(val).replace(/"/g, '') : e(val)) : '');
-                });
+            	var val = empty ? key : item;
+            	buf.push('&', e(key), '=', (!Ambow.isEmpty(val) && (val != key || !empty)) ? (_.isDate(val) ? Ambow.encode(val).replace(/"/g, '') : e(val)) : '');
             }
-            
+   
             if(!pre){
                 buf.shift();
                 pre = '';

@@ -232,7 +232,7 @@
 	 	initialize: function(cfg){
 	 		var cfg = cfg||{};
 	 		Ambow.apply(this,cfg);
-	 		this.oriUrl = this.url;
+	 		this.URL=this.oriUrl = this.url;
 	 		if(this.params){
 	 			this.url = Ambow.urlAppend(this.oriUrl,Ambow.urlEncode(this.params));
 	 		}
@@ -298,9 +298,9 @@
 	 		var pager = this.view.pager;
 	 		if(pager){
 	 			if(opt&&opt.params&&opt.params.pageno){pager.currPage=opt.params.pageno;}
-	 			this.url = Ambow.urlAppend(me.oriUrl,Ambow.urlEncode(Ambow.apply(params,{pageno:pager.currPage,pagesize:pager.pageSize})));
+	 			this.url = Ambow.urlAppend(me.URL,Ambow.urlEncode(Ambow.apply(params,{pageno:pager.currPage,pagesize:pager.pageSize})));
 	 		}else{
-	 			this.url = Ambow.urlAppend(me.oriUrl,Ambow.urlEncode(params));
+	 			this.url = Ambow.urlAppend(me.URL,Ambow.urlEncode(params));
 	 		}
 	
 	 			this.fetch({
@@ -404,7 +404,7 @@
 	 			this.view = view;
 	 			this.store = this.view.store;
 	 			//this.pageSize = this.view.pageSize;
-	 			this.url = this.store.oriUrl;
+	 			this.url = this.store.URL;
 	 		}
 	
 			$(this.el).html(this.getPageView());
@@ -495,7 +495,7 @@
 	 		this.currPage=num;
 	 		var url = this.url;
 	 		var params = this.store.params||{};
-	
+			delete params._dc;
 	 		this.store.url=this.packURL(this.url,this.store.packUrl,params,num);
 	 		this.store.refresh();
 	 	},

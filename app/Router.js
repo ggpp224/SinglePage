@@ -54,9 +54,8 @@
  				var view = new View();
  				Ambow.viewStack.push(view);
  				view.render();
- 				//path.substr(path.lastIndexOf('/')+1)
  				view.setCurmbs(App.G_NavData[path]);
- 				me.trigger('loadComplete');
+ 				me.trigger('loadComplete');			
  			});
  		},
  		
