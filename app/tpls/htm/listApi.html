@@ -1,14 +1,8 @@
-/**
- * @author gp
- * @datetime 2013-4-1
- * @description ListDemo.js
- */
- 
- define(function(require,exports,module){
- 	var List = require('list');
- 	var ListView = Ambow.extend(Ambow.View,{
- 		render: function(){
- 			var list = new List.ListView({
+<div>
+	<a href="#!/ListDemo/">点击查看示例</a>
+	<pre>
+		var List = require('list');
+		var list = new List.ListView({
 				id:'train_list_server',
 				pager:new List.ListPager({pageno:1,pagesize:15}),
 				store: new List.ListStore({
@@ -25,8 +19,7 @@
 			        	return v;
 			        }
 		
-			    },{
-		
+			    },{		
 			        header: '作业标题',
 			        dataIndex: 'taskTitled',
 			        width:'150',
@@ -72,8 +65,5 @@
 			App.el.html(this.el);
 			var store = list.store;
 			store.load();
- 		}
- 	});
- 	
- 	return ListView;
- });
+	</pre>
+</div>

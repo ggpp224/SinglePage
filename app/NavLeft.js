@@ -29,7 +29,7 @@
  					Ambow.router.load('module2/Page2/')
  					break;
  				case '3':
- 					Ambow.router.load('ListDemo/')
+ 					Ambow.router.load('ListApi/')
  					break;
  			}
  			this.trigger('nav_module'+idx+'_click');
