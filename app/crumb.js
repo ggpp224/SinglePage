@@ -18,6 +18,13 @@
 	 					{"text":"Page1页面","nav":"module1/Page1"},
 						{"text":"Page2页面","nav":"module2/Page2"}
 	 				]
+	 			},
+	 			{
+	 				text:'ListView API',
+	 				nav:'ListApi',
+	 				children:[
+	 					{"text":"ListView Demo","nav":"ListDemo"}
+	 				]
 	 			}
 	 		]
 	 };
