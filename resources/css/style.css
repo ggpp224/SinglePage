@@ -102,7 +102,6 @@ a {
 #content-view {
     border: 1px solid #D2D9DD;
     border-radius: 4px 4px 4px 4px;
-    color: #7B878C;
     font-size: 14px;
     margin: 10px 0;
     padding: 9px 8px 9px;
@@ -218,4 +217,15 @@ a {
     float: left;
     list-style-type: none;
     padding: 0 10px;
+}
+
+pre {
+    background-color: #F8F8F8;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    margin: 5px 0;
 }
