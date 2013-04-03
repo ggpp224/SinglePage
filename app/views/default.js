@@ -5,11 +5,11 @@
  */
  
  define(function(require,exports,module){
-
+	var tpl = require('app/tpls/htm/default.html')
  	var Page1 = Ambow.extend(Ambow.View,{
 
  		render: function(){
- 			this.$el.html('页面演示');
+ 			this.$el.html(tpl);
  			App.el.html(this.el);
  			return this;
  		}

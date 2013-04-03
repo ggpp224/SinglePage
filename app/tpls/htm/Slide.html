@@ -1,0 +1,50 @@
+<style type="text/css">
+	.block-container{
+		width:700px;
+		height:300px;
+		border:1px solid;
+		position:relative;
+		overflow:hidden;
+		margin:5px 0;
+	}
+	#inlineCon{
+		background:#E6F1F6;
+		width:700px;
+		height:300px;
+		position: absolute;
+	}
+	
+	#picCon{
+		width:500px;
+		height:350px;
+		position: relative;
+		border:1px solid;
+		overflow:hidden; 
+		
+	}
+	#picCon ul{
+		width:1000px;
+		position:absolute;
+	}
+	#picCon ul li{
+		float:left;
+	}
+</style>
+<div>
+	<input type="button" id="slideBtn1" value="start">
+	<div class="block-container">
+		<div id="inlineCon">
+		
+		</div>
+	</div>
+	
+	
+	<input type="button" id="slideBtn2" value="start">
+	<div id="picCon">
+		<ul id="imgUl">
+			<li><img width="500" height="350" src="http://pic4.duowan.com/wow/1112/189251534179/189251694094.jpg"></li>
+			<li><img width="500" height="350" src="http://content.52pk.com/files/101104/99_131738_2_lit.jpg"></li>
+		</ul>
+	</div>
+
+</div>

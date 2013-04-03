@@ -41,8 +41,24 @@
  		
  		
  		initPage: function(id){
- 			this.trigger('loadStart');
  			var me = this;
+ 			
+ 			//切换动画
+ 			flag = false;
+ 			var el = $($('#content-view').children()[0]);
+ 			el.css({position:"absolute",overflow:"hidden"});
+ 			var i =0;
+			var s=setInterval(function(){
+				i+=30;
+				el.css('right',i+'px');
+				if(i>=782||flag){
+					clearInterval(s);
+					if(!flag){
+						me.trigger('loadStart');
+					}
+				}
+			},30);
+			
  			var hash = this.getHashObject(),path=hash.hashPath;
  			require.async('app/views/'+path,function(View){
  				var oldView = Ambow.viewStack.pop();
@@ -53,6 +69,7 @@
  				}
  				var view = new View();
  				Ambow.viewStack.push(view);
+ 				flag = true;
  				view.render();
  				view.setCurmbs(App.G_NavData[path]);
  				me.trigger('loadComplete');			

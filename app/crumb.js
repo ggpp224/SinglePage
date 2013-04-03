@@ -16,7 +16,8 @@
 	 				nav:'default',
 	 				children:[
 	 					{"text":"Page1页面","nav":"module1/Page1"},
-						{"text":"Page2页面","nav":"module2/Page2"}
+						{"text":"Page2页面","nav":"module2/Page2"},
+						{"text":"Slide动画","nav":"animate/Slide"}
 	 				]
 	 			},
 	 			{
