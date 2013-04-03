@@ -1,7 +1,7 @@
 /**
  * 程序入口文件
  */
- 
+ //https://github.com/ggpp224/jQuery-menu-aim
  define(function(require,exports,module){
  	
  	
