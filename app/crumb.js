@@ -26,6 +26,10 @@
 	 				children:[
 	 					{"text":"ListView Demo","nav":"ListDemo"}
 	 				]
+	 			},
+	 			{
+	 				text:'UnderScore API',
+	 				nav:'api/underScore'
 	 			}
 	 		]
 	 };

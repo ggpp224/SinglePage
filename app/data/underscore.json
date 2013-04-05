@@ -1,0 +1,59 @@
+[
+	{
+		name: "Array Functions",
+		desc: "<p>所有Array函数同样适用于<strong>arguments</strong>对象。</p>",
+		members:[
+			{
+				id: "array-indexOf",
+				name: "indexOf",
+				params:[{name:"array",type:"Array",desc:"数组"},{name:"value",type:"Mixed",desc:"要查找的值"},{name:"isSorted",type:"Boolean",desc:"是否已排序/查找起始索引值",optional:true}],
+				back:{type:"Int",desc:""},
+				desc:'返回value在数组中的索引，如果value不在数组中，则返回-1。当有一个比较大的并且有序的数组，传入第三个参数isSorted为true,系统会用更快的二分查找匹配的索引。如果第三个参数传入的是一个数字，则会从这个数字后开始查找匹配的索引。',
+				code:[
+					{name:"test1",code:" var arr=[1,3,5,2,4]; \n alert(_.indexOf(arr,2));"},
+					{name:"test2",code:" var arr=[1,3,5,2,4]; \n alert(_.indexOf(arr,2,2));"}				
+				]
+			},
+			{
+				id: "array-without",
+				name: "without",
+				params:[{name:"array",type:"Array",desc:"数组"},{name:"value",type:"Mixed",desc:"要删除掉的项，多项以逗号分开"}],
+				back:{type:"Array",desc:""},
+				desc:"从一个数组中删除指定的一项或多项",
+				code: [{name:"run",code:" var arr = [2,3,4,5]; \n var rs = _.without(arr,2,4); \n alert(rs); "}]
+			}
+		]
+	},
+	
+	{
+		name: "Functions",
+		desc:"",
+		members:[
+			{
+				id: "function-bind",
+				name: "bind",
+				params:[{name:"function",type:"Function",desc:"函数对象"},{name:"object",type:"Object",desc:""},{name:"arguments...",type:"",desc:"",optional:true}],
+				desc: "将object绑定到function上，此ojbect属性作为function对象的实例属性，arguments会作为参数传入。",
+				code:[
+					{name:"run",code:" var func = function(greeting){ alert( greeting + ': ' + this.name); }; \n func = _.bind(func, {name : 'moe'}, 'hi'); \n func();"}
+				]
+			}
+		]
+	}
+	
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

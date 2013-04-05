@@ -7,7 +7,13 @@
  define(function(require,exports,module){
  	var NavLeftView = Ambow.extend(Ambow.View,{
  		
- 		tpl:'<ul><li><a idx="1" class="dd" href="javascript:void(0)">模块一</a></li><li><a idx="2" href="javascript:void(0)">模块二</a></li><li><a idx="3" href="javascript:void(0)">ListView</a></li></ul>',
+ 		tpl:['<ul>',
+ 				'<li><a idx="1" class="dd" href="javascript:void(0)">模块一</a></li>',
+ 				'<li><a idx="2" href="javascript:void(0)">模块二</a></li>',
+ 				'<li><a idx="3" href="javascript:void(0)">ListView</a></li>',
+ 				'<li><a idx="4" href="javascript:void(0)">UnderScore Api</a></li>',
+
+ 			'</ul>'].join(''),
  		
  		events: {
  			'click li a': 'onNavItemClicked' 
@@ -27,6 +33,9 @@
  					break;
  				case '2':
  					Ambow.router.load('module2/Page2/')
+ 					break;
+ 				case '4':
+ 					Ambow.router.load('api/underScore/')
  					break;
  				case '3':
  					Ambow.router.load('ListApi/')

@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+.members {
+    clear: both;
+    color: #444444;
+    padding-top: 10px;
+    font-family: Helvetica Neue,Arial,sans-serif;
+    
+}
+
+.members .subsection{
+	margin-bottom:20px;
+}
+
+.members .member.first-child {
+    border-width: 1px 0;
+}
+.members .member {
+    border-color: #E0E0E0;
+    border-style: solid;
+    border-width: 0 0 1px;
+    min-height: 2.5em;
+    padding: 10px 22px;
+    position: relative;
+}
+.x-border-box, .x-border-box * {
+    -moz-box-sizing: border-box;
+}
+
+.members .member a.side.expandable, .members .member a.side.toggleComments {
+    cursor: pointer;
+}
+
+.members .member.open a.side.expandable {
+    background: -moz-linear-gradient(left center , #EBF3FE, #D9E8FC) repeat scroll 0 0 transparent;
+}
+.members .member.open > a.side.toggleComments, .members .member.open > a.side.expandable {
+    background: none repeat scroll 0 0 #EBF3FE;
+}
+
+.members .member.open a.side.expandable span {
+    background: url("../../images/member-expanded.gif") no-repeat scroll 1px 2px transparent;
+}
+.members .member.open > a.side.toggleComments span, .members .member.open > a.side.expandable span {
+    background: url("../../images/member-expanded.gif") no-repeat scroll 2px 12px transparent;
+}
+.members .member a.side.expandable span, .members .member a.side.toggleComments span {
+    background: url("../../images/member-collapsed.gif") no-repeat scroll 3px 13px transparent;
+}
+.members .member a.side span {
+    display: block;
+    height: 30px;
+    width: 15px;
+}
+
+.members .member a.side {
+    bottom: 0;
+    cursor: default !important;
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.members a {
+    text-decoration: none;
+}
+.members .member .name {
+    font-weight: bold;
+}
+.x-border-box, .x-border-box * {
+    -moz-box-sizing: border-box;
+}
+div.long{
+	display:none;
+}
+
+div.long ul li{
+	list-style: disc outside none;
+	margin-left: 26px;
+}
+
+.members h5.pa {
+    padding: 10px 0 5px;
+}
+.members .pre {
+    font-family: "Menlo","Courier New","Courier",monospace;
+    font-size: 0.9em;
+}
+
+.members .sub-desc {
+    margin: 0.5em 0 1em;
+}
+
+div.code-section{
+	margin-bottom : 15px;
+}
+
+.cmp-class h3 {
+    border-bottom: 1px none #F1F1F1;
+    color: #66AB16;
+    font-family: "Exo",sans-serif;
+    font-size: 2em;
+    padding-bottom: 5px;
+    padding-top: 2px;
+}
+.members .class-source-link{
+	color: #66AB16;
+    margin-left: -3px;
+    padding: 0.2em 0 0.4em 2.3em;
+    background: url("../../images/component-m.png") no-repeat scroll 0 -5px transparent;
+}
+
+.members p{
+	color: #484848;
+}
+
+div.doc-contents{
+	padding:20px 8px 20px 5px;	
+	border-color: #E0E0E0;
+    border-style: solid;
+    border-width: 0 0 1px;
+}
+
+
+

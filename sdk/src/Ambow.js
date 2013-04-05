@@ -104,6 +104,23 @@
             return pre + buf.join('');
         },
         
+        ellipsis : function(value, len, word) {
+            if (value && value.length > len) {
+                if (word) {
+                    var vs    = value.substr(0, len - 2),
+                        index = Math.max(vs.lastIndexOf(' '), vs.lastIndexOf('.'), vs.lastIndexOf('!'), vs.lastIndexOf('?'));
+                    if (index == -1 || index < (len - 15)) {
+                        return value.substr(0, len - 3) + "...";
+                    } else {
+                        return vs.substr(0, index) + "...";
+                    }
+                } else {
+                    return value.substr(0, len - 3) + "...";
+                }
+            }
+            return value;
+        },
+        
         getCookie : function (O){var o="",l=O+"=";if(document.cookie.length>0){var i=document.cookie.indexOf(l);if(i!=-1){i+=l.length;var I=document.cookie.indexOf(";",i);if(I==-1)I=document.cookie.length;o=unescape(document.cookie.substring(i,I))}};return o},
 		
         // 植入cookie n->cookieq名,v->cookie值,t->时间(毫秒),p->路径,c->域名
