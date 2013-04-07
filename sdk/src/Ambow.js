@@ -228,10 +228,7 @@
  	
 	Ambow.JSON = new (function(){
 	    var useHasOwn = !!{}.hasOwnProperty,
-	        isNative = function() {
-	             return false;
-	           
-	        }(),
+	        isNative = !!window.JSON,
 	        pad = function(n) {
 	            return n < 10 ? "0" + n : n;
 	        },
