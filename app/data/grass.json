@@ -1,0 +1,29 @@
+
+	{
+		name: "Ambow",
+		desc: "<p>框架核心类， 单例</p>",
+		members:[
+			{
+				id: "ambow-extend",
+				name: "extend",
+				params:[{name:"obj",type:"Function",desc:"父类"},{name:"protoProps",type:"Object",desc:"子类实例属性"},{name:"staticProps",type:"Object",desc:"子类静态属性",optional:true}],
+				back:{type:"Function",desc:"返回子类"},
+				desc:'类继承'
+			}
+		]
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

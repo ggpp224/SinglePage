@@ -12,6 +12,7 @@
  				'<li><a idx="2" href="javascript:void(0)">模块二</a></li>',
  				'<li><a idx="3" href="javascript:void(0)">ListView</a></li>',
  				'<li><a idx="4" href="javascript:void(0)">UnderScore Api</a></li>',
+ 				'<li><a idx="5" href="javascript:void(0)">Grass Api</a></li>',
 
  			'</ul>'].join(''),
  		
@@ -39,6 +40,9 @@
  					break;
  				case '3':
  					Ambow.router.load('ListApi/')
+ 					break;
+ 				case '5':
+ 					Ambow.router.load('api/grass/')
  					break;
  			}
  			this.trigger('nav_module'+idx+'_click');

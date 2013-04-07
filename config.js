@@ -28,6 +28,7 @@
     'ambow':'sdk/src/Ambow.js',
     'global':'app/global.js',
     'crumb':'app/crumb.js',
-    'list': 'sdk/src/ListView' 
+    'list': 'sdk/src/ListView.js',
+    'api': 'sdk/src/Api.js'
   }
 });
