@@ -56,7 +56,7 @@ h6					{ font-size:12px;}
 	.page_right			{ width:800px; border-radius:0 4px 4px 0;margin:0 auto;padding:1px 0 0 2px}
 
 
-/* leftNav */
+/* leftNav 
 .page_left li a {
     border-bottom: 2px solid #DADADA;
     border-left: 1px solid rgba(255, 255, 255, 0.7);
@@ -79,7 +79,7 @@ h6					{ font-size:12px;}
 .page_left li a:hover {
     border-bottom: 2px solid #D26911;
 }
-
+*/
 
 #breadcrumb {
 	color: #999999;
