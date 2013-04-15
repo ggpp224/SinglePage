@@ -5,20 +5,10 @@
  */
  
  define(function(require,exports,module){
- 	require('resources/css/bootstrap.css');
+ 	require('resources/css/menu-aim.css');
  	require('sdk/components/jquery.menu-aim.js');
  	var NavLeftView = Ambow.extend(Ambow.View,{
- 		
-// 		tpl:['<ul>',
-// 				'<li><a idx="1" class="dd" href="javascript:void(0)">模块一</a></li>',
-// 				'<li><a idx="2" href="javascript:void(0)">模块二</a></li>',
-// 				'<li><a idx="3" href="javascript:void(0)">ListView</a></li>',
-// 				'<li><a idx="4" href="javascript:void(0)">UnderScore Api</a></li>',
-// 				'<li><a idx="5" href="javascript:void(0)">Grass Api</a></li>',
-//
-// 			'</ul>'].join(''),
- 		
- 		
+
  		events: {
  			'click li a.sub-menu-item, a.maintainHover': 'onSubMenuItemClicked' 
  		},
@@ -69,27 +59,7 @@
  			 $(".popover").css("display", "none");
             $("a.maintainHover").removeClass("maintainHover");
  		},
- 		onNavItemClicked: function(e){
- 			var idx = e.target.getAttribute('idx');
- 			switch(idx){
- 				case '1':
- 					Ambow.router.load('module1/Page1/')
- 					break;
- 				case '2':
- 					Ambow.router.load('module2/Page2/')
- 					break;
- 				case '4':
- 					Ambow.router.load('api/underScore/')
- 					break;
- 				case '3':
- 					Ambow.router.load('ListApi/')
- 					break;
- 				case '5':
- 					Ambow.router.load('api/grass/')
- 					break;
- 			}
- 			this.trigger('nav_module'+idx+'_click');
- 		},
+
  		
  		tpl: ['<div class="nav-collapse collapse">',
             	'<ul class="nav">',
