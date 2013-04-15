@@ -67,7 +67,7 @@
                 		'<ul class="dropdown-menu" role="menu">',
                 			'<% _.each(menu,function(rec){ %>',	
                 			'<li data-submenu-id="<%=rec.id%>">',
-                        		'<a href="#"><%=rec.title%></a>',
+                        		'<a href="#!/<%=rec.link%>"><%=rec.title%></a>',
                         		'<div id="<%=rec.id%>" class="popover">',
                            			'<h3 class="popover-title"><%=rec.title%></h3>',
                             		'<div class="popover-content">',
