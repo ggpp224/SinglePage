@@ -438,17 +438,19 @@ Ext.define('Ext.grid.plugin.BufferedRenderer', {
     handleViewScroll: function(direction) {
     	console.log('----enter handleViewScroll-----..');
         var me                = this,
-            rows              = me.view.all,
+            rows              = me.view.all, //table 中存在的所有行的对象， NodeCache
             store             = me.store,
-            viewSize          = me.viewSize,
-            totalCount        = (store.buffered ? store.getTotalCount() : store.getCount()),
+            viewSize          = me.viewSize, //table中行数
+            totalCount        = (store.buffered ? store.getTotalCount() : store.getCount()), //总记录数
             requestStart,
             requestEnd;
 
         // Only process if the total rows is larger than the visible page size
+        //大于一页
         if (totalCount >= viewSize) {
 
             // We're scrolling up
+        	//向上滑
             if (direction == -1) {
 
                 // If table starts at record zero, we have nothing to do
@@ -459,10 +461,15 @@ Ext.define('Ext.grid.plugin.BufferedRenderer', {
                 }
             }
             // We're scrolling down
+            //向下滑
             else {
 
                 // If table ends at last record, we have nothing to do
+            	//table中最后一行不为总记录最后一行
+            	//rows.startIndex :table中第一行在总记录中的index
+            	//rows.endIndex : table中最后一行在总记录中的index
                 if (rows.endIndex < totalCount - 1) {
+                	//table的最后一行与可视view的最后一行相差小于numFromEdge时
                     if ((rows.endIndex - me.getLastVisibleRowIndex()) < me.numFromEdge) {
                         requestStart = Math.max(0, me.getFirstVisibleRowIndex() - me.trailingBufferZone);
                     }
