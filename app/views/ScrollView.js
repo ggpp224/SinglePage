@@ -19,6 +19,7 @@
  			$('.scroll-body').scroll(function(e,d){
  				var el = this;
  				scrollTop = el.scrollTop;
+ 				console.log('el scrollTop:'+scrollTop);
  				vscrollDistance = scrollTop - me.position;
             	scrollDirection = vscrollDistance > 0 ? 1 : -1;
  				me.scrollTop = scrollTop;
